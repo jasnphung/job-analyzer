@@ -566,6 +566,10 @@ _live_commit_html = """<!DOCTYPE html><html><head><meta charset='utf-8'></head><
 })();
 </script>
 </body></html>"""
+st.markdown(
+    "<style>iframe[src^='data:text/html']{display:none!important;}</style>",
+    unsafe_allow_html=True,
+)
 st.iframe(
     "data:text/html;charset=utf-8," + urllib.parse.quote(_live_commit_html),
     height=1,
